@@ -1,22 +1,32 @@
 <html>
-   <head>
-      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-      <script>
-           $(document).ready(function(){
-                $('#btnOn1').click(function(){
-                    $.ajax({
-                      type: 'ON1',
-                      url: '/process',
-                      success: function(data){
-                        console.log(data)
-                      }
-                    });
-           	});
-           });
-      </script>
-   </head>
-   <body>
-    <input type="button" id="btnOn1" value="Open Door">
-
-    </body>
-</html>
+                   <head>
+                      <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+                      <script>
+                           $(document).ready(function(){
+                                $('#btnOn1').click(function(){
+                                    $.ajax({
+                                      type: 'ON1',
+                                      url: '/process',
+                                      success: function(data){
+                                        console.log(data)
+                                      }
+                                    });
+                                });
+                                
+                                $('#btnOff1').click(function(){
+                                    $.ajax({
+                                      type: 'OFF1',
+                                      url: '/process',
+                                      success: function(data){
+                                        console.log(data)
+                                      }
+                                    });
+                                });
+                           });
+                      </script>
+                   </head>
+                   <body>
+                    <input type="button" id="btnOn1" value="Open Door">
+                    <input type="button" id="btnOff1" value="Reboot Pi">
+                    </body>
+                   </html>

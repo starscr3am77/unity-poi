@@ -28,7 +28,13 @@ def turn_it_on1():
     GPIO.setup(12, GPIO.OUT)
     GPIO.output(12, GPIO.HIGH)
 
-    return "Turned 1 on"
+    return "Opened door"
+
+@app.route('/process', methods=['OFF1'])
+def turn_it_off1():
+	os.system("sudo shutdown -r now")
+	
+	return "Reboot Pi"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081)
